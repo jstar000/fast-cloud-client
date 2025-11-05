@@ -1,10 +1,11 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { colors } from './tokens/colors.css';
 
 globalStyle('body', {
   minWidth: '1280px',
   fontFamily:
     '"Pretendard Variable", Pretendard, -apple-system, "Helvetica Neue", Arial, sans-serif',
-  backgroundColor: '#ffffff',
+  backgroundColor: colors.gray900,
 });
 
 globalStyle('#root', {
