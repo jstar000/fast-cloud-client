@@ -1,4 +1,5 @@
 import { Button } from '@/shared/components/Button/Button';
+import { IconButton } from '@/shared/components/IconButton/IconButton';
 import * as styles from './TestPage.css';
 
 export const TestPage = () => {
@@ -62,11 +63,23 @@ export const TestPage = () => {
       </section>
 
       <section className={styles.section}>
+        <h2>Icon Button</h2>
+        <div className={styles.buttonGrid}>
+          <IconButton icon="chevron-down" />
+          <IconButton icon="chevron-up" />
+          <IconButton icon="copy" />
+          <IconButton icon="folder" />
+          <IconButton icon="meatball" />
+        </div>
+      </section>
+
+      <section className={styles.section}>
         <h2>Click Test</h2>
         <div className={styles.buttonGrid}>
           <Button variant="cta-large" onClick={() => alert('CTA 버튼 클릭!')}>
             클릭해보세요
           </Button>
+          <IconButton icon="copy" onClick={() => alert('복사 버튼 클릭!')} />
         </div>
       </section>
     </div>
