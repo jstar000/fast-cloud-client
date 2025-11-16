@@ -2,7 +2,17 @@ import React from 'react';
 import * as styles from './Button.css';
 
 interface ButtonProps extends React.ComponentProps<'button'> {
-  variant: 'home' | 'white' | 'cta' | 'login' | 'gray' | 'nav' | 'text';
+  variant:
+    | 'home'
+    | 'white'
+    | 'cta-large'
+    | 'cta-small'
+    | 'login'
+    | 'gray'
+    | 'nav-login'
+    | 'nav-signup'
+    | 'text-medium'
+    | 'text-small';
 }
 
 export const Button = ({

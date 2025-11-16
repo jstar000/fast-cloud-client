@@ -3,34 +3,26 @@ import { colors } from '@styles/tokens/colors.css';
 import { typographyVars } from '@styles/tokens/typography.css';
 
 export const container = style({
-  padding: '48px',
-  maxWidth: '1200px',
+  padding: '64px',
+  maxWidth: '1400px',
   margin: '0 auto',
-  backgroundColor: colors.gray050,
+  backgroundColor: colors.gray900,
   minHeight: '100vh',
 });
 
 export const title = style({
   ...typographyVars.heading_sb_60,
-  color: colors.gray900,
-  marginBottom: '48px',
+  color: colors.gray000,
+  marginBottom: '64px',
   textAlign: 'center',
 });
 
 export const section = style({
   marginBottom: '48px',
-  padding: '32px',
-  backgroundColor: colors.gray000,
+  padding: '48px',
+  backgroundColor: colors.gray800,
   borderRadius: '16px',
-  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-
-  selectors: {
-    '& h2': {
-      ...typographyVars.heading_sb_22,
-      color: colors.gray000,
-      marginBottom: '24px',
-    },
-  },
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
 });
 
 export const buttonGrid = style({

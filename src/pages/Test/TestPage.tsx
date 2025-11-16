@@ -23,7 +23,8 @@ export const TestPage = () => {
       <section className={styles.section}>
         <h2>CTA Button</h2>
         <div className={styles.buttonGrid}>
-          <Button variant="cta">버튼 이름 →</Button>
+          <Button variant="cta-large">버튼 이름 → (Large)</Button>
+          <Button variant="cta-small">버튼 이름 → (Small)</Button>
         </div>
       </section>
 
@@ -47,25 +48,23 @@ export const TestPage = () => {
       <section className={styles.section}>
         <h2>Nav Button</h2>
         <div className={styles.buttonGrid}>
-          <Button variant="nav">Log in</Button>
-          <Button variant="nav">Sign up</Button>
+          <Button variant="nav-login">Log in</Button>
+          <Button variant="nav-signup">Sign up</Button>
         </div>
       </section>
 
       <section className={styles.section}>
         <h2>Text Button</h2>
         <div className={styles.buttonGrid}>
-          <Button variant="text">텍스트 버튼</Button>
-          <Button variant="text" disabled>
-            텍스트 버튼 (disabled)
-          </Button>
+          <Button variant="text-medium">텍스트 버튼 (Medium)</Button>
+          <Button variant="text-small">텍스트 버튼 (Small)</Button>
         </div>
       </section>
 
       <section className={styles.section}>
         <h2>Click Test</h2>
         <div className={styles.buttonGrid}>
-          <Button variant="cta" onClick={() => alert('CTA 버튼 클릭!')}>
+          <Button variant="cta-large" onClick={() => alert('CTA 버튼 클릭!')}>
             클릭해보세요
           </Button>
         </div>

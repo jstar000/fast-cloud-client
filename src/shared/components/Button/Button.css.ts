@@ -52,13 +52,31 @@ export const buttonStyles = recipe({
         },
       },
 
-      // TODO: large, small 나누기
-      cta: {
+      'cta-large': {
         ...typographyVars.title_sb_16,
         backgroundColor: colors.gray000_06,
         color: colors.gray000,
         padding: '8px 0',
         minWidth: '260px',
+        height: '48px',
+        borderRadius: '10px',
+
+        ':hover': {
+          backgroundColor: colors.primary,
+        },
+
+        ':active': {
+          backgroundColor: colors.primaryDark,
+          transform: 'scale(0.97)', // GPU 가속
+        },
+      },
+
+      'cta-small': {
+        ...typographyVars.title_sb_16,
+        backgroundColor: colors.gray000_06,
+        color: colors.gray000,
+        padding: '6px 0',
+        minWidth: '196px',
         height: '48px',
         borderRadius: '10px',
 
@@ -115,8 +133,7 @@ export const buttonStyles = recipe({
         },
       },
 
-      // TODO: Login, Signup 나누기
-      nav: {
+      'nav-login': {
         ...typographyVars.body_r_14,
         color: colors.gray200,
         padding: '8px 16px',
@@ -135,13 +152,47 @@ export const buttonStyles = recipe({
         },
       },
 
-      // TODO: large, small 나누기
-      text: {
+      'nav-signup': {
+        ...typographyVars.body_m_14,
+        backgroundColor: colors.gray000,
+        color: colors.gray900,
+        padding: '8px 16px',
+        minWidth: '78px',
+        height: '37px',
+        borderRadius: '99px',
+
+        ':hover': {
+          color: colors.gray600,
+        },
+
+        ':active': {
+          backgroundColor: colors.gray300,
+          color: colors.gray900,
+        },
+      },
+
+      'text-small': {
         ...typographyVars.caption_r_12_underline,
         color: colors.gray400,
         padding: '4px 8px',
         minWidth: '60px',
         height: '26px',
+
+        ':hover': {
+          color: colors.gray300,
+        },
+
+        ':active': {
+          color: colors.gray500,
+        },
+      },
+
+      'text-medium': {
+        ...typographyVars.body_r_14_underline,
+        color: colors.gray400,
+        padding: '4px 8px',
+        minWidth: '67px',
+        height: '29px',
 
         ':hover': {
           color: colors.gray300,
