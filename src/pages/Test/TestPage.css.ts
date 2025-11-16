@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css';
 import { colors } from '@styles/tokens/colors.css';
-import { typographyVars } from '@styles/tokens/typography.css';
 
 export const container = style({
   padding: '64px',
@@ -11,16 +10,14 @@ export const container = style({
 });
 
 export const title = style({
-  ...typographyVars.heading_sb_60,
   color: colors.gray000,
-  marginBottom: '64px',
-  textAlign: 'center',
+  marginBottom: '20px',
 });
 
 export const section = style({
   marginBottom: '48px',
   padding: '48px',
-  backgroundColor: colors.gray800,
+  backgroundColor: colors.gray900,
   borderRadius: '16px',
   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
 });
