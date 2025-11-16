@@ -34,8 +34,14 @@ export { default as Meatball_Default_Url } from '@svg/btnIcn/meatball_default.sv
 export { default as Meatball_Hover_Url } from '@svg/btnIcn/meatball_hover.svg?url';
 export { default as Meatball_Pressed_Url } from '@svg/btnIcn/meatball_pressed.svg?url';
 
-// checkbox
+// checkbox - React Components
 export { default as Checkbox_Default } from '@svg/checkbox/checkbox_default.svg?react';
 export { default as Checkbox_Hover } from '@svg/checkbox/checkbox_hover.svg?react';
 export { default as Checkbox_Pressed } from '@svg/checkbox/checkbox_pressed.svg?react';
 export { default as Checkbox_Selected } from '@svg/checkbox/checkbox_selected.svg?react';
+
+// checkbox - URL for CSS
+export { default as Checkbox_Default_Url } from '@svg/checkbox/checkbox_default.svg?url';
+export { default as Checkbox_Hover_Url } from '@svg/checkbox/checkbox_hover.svg?url';
+export { default as Checkbox_Pressed_Url } from '@svg/checkbox/checkbox_pressed.svg?url';
+export { default as Checkbox_Selected_Url } from '@svg/checkbox/checkbox_selected.svg?url';

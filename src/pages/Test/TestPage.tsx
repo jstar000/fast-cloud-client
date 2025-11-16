@@ -1,5 +1,6 @@
 import { Button } from '@/shared/components/Button/Button';
 import { IconButton } from '@/shared/components/IconButton/IconButton';
+import { Checkbox } from '@/shared/components/Checkbox/Checkbox';
 import * as styles from './TestPage.css';
 
 export const TestPage = () => {
@@ -70,6 +71,16 @@ export const TestPage = () => {
           <IconButton icon="copy" />
           <IconButton icon="folder" />
           <IconButton icon="meatball" />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Checkbox</h2>
+        <div className={styles.buttonGrid}>
+          <Checkbox />
+          <Checkbox checked />
+          <Checkbox disabled />
+          <Checkbox checked disabled />
         </div>
       </section>
 
