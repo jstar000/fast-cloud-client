@@ -1,6 +1,6 @@
-import { Button } from '@/shared/components/Button/Button';
-import { IconButton } from '@/shared/components/IconButton/IconButton';
-import { Checkbox } from '@/shared/components/Checkbox/Checkbox';
+import { Button } from '@/shared/components/button/Button';
+import { IconButton } from '@/shared/components/iconButton/IconButton';
+import { Checkbox } from '@/shared/components/checkbox/Checkbox';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { ICON_TYPES } from '@/shared/constants/icon';
 import * as styles from './TestPage.css';
