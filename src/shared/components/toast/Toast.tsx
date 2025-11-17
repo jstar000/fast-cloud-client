@@ -3,7 +3,7 @@ import * as styles from './Toast.css';
 import { Icn_Success, Icn_Failure } from '@/assets/svg';
 import type { ToastType } from '@/shared/constants/toast';
 
-interface ToastProps extends React.ComponentProps<'div'> {
+interface Props extends React.ComponentProps<'div'> {
   type: ToastType;
   content: string;
   onClose?: () => void; // Toast 닫을 때 사용
@@ -14,7 +14,7 @@ export const Toast = ({
   content,
   // onClose,
   ...props
-}: ToastProps) => {
+}: Props) => {
   return (
     <div
       className={styles.container}

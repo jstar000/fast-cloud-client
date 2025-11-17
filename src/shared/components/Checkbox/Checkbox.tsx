@@ -1,11 +1,11 @@
 import React from 'react';
 import * as styles from './Checkbox.css';
 
-interface CheckboxProps extends Omit<React.ComponentProps<'input'>, 'type'> {
+interface Props extends Omit<React.ComponentProps<'input'>, 'type'> {
   checked?: boolean;
 }
 
-export const Checkbox = ({ checked, className, ...props }: CheckboxProps) => {
+export const Checkbox = ({ checked, className, ...props }: Props) => {
   return (
     <input
       type="checkbox"

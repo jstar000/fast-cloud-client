@@ -2,7 +2,7 @@ import React from 'react';
 import * as styles from './TextField.css';
 import type { TextFieldType } from '@/shared/constants/textField';
 
-interface TextFieldProps extends Omit<React.ComponentProps<'input'>, 'type'> {
+interface Props extends Omit<React.ComponentProps<'input'>, 'type'> {
   // input element의 모든 props를 상속하되, type prop만 제외
   // input의 type은 개발자가 제어(TextFieldType으로 제한)
   type: TextFieldType;
@@ -19,7 +19,7 @@ export const TextField = ({
   detail,
   labelSize = 'small',
   ...props
-}: TextFieldProps) => {
+}: Props) => {
   return (
     <div className={styles.container({ size: labelSize })}>
       {(label || detail) && (
