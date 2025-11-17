@@ -2,6 +2,7 @@ import { Button } from '@/shared/components/button/Button';
 import { IconButton } from '@/shared/components/iconButton/IconButton';
 import { Checkbox } from '@/shared/components/checkbox/Checkbox';
 import { TextField } from '@/shared/components/textField/TextField';
+import { CheckboxTextField } from '@/shared/components/checkboxTextField/CheckboxTextField';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { ICON_TYPES } from '@/shared/constants/icon';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
@@ -139,6 +140,22 @@ export const TestPage = () => {
             placeholder="에러 예시"
             error
           />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.title}>CheckboxTextField</h2>
+        <div className={styles.buttonGrid}>
+          <CheckboxTextField
+            title="텍스트박스 내용을 입력하는 공간입니다"
+            detail="설명을 입력하는 공간입니다"
+          />
+          <CheckboxTextField
+            title="전체 동의"
+            detail="모든 약관에 동의합니다"
+            checked
+          />
+          <CheckboxTextField title="비활성화" detail="비활성화 상태" disabled />
         </div>
       </section>
     </div>
