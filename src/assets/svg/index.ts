@@ -52,3 +52,8 @@ export { default as Icn_Failure } from '@svg/icn/icn_failure.svg?react';
 export { default as Icn_Plus_Black } from '@svg/icn/icn_plus_black.svg?react';
 export { default as Icn_Plus_Gray } from '@svg/icn/icn_plus_gray.svg?react';
 export { default as Icn_Success } from '@svg/icn/icn_success.svg?react';
+
+// divider - React Components
+export { default as Divider_Large } from '@svg/divider/divider_large.svg?react';
+export { default as Divider_Medium } from '@svg/divider/divider_medium.svg?react';
+export { default as Divider_Vertical } from '@svg/divider/divider_vertical.svg?react';
