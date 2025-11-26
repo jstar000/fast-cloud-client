@@ -19,7 +19,7 @@ export const section = style({
   padding: '48px',
   backgroundColor: colors.gray900,
   borderRadius: '16px',
-  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+  border: `1px solid white`,
 });
 
 export const buttonGrid = style({

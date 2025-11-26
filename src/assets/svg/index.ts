@@ -45,3 +45,18 @@ export { default as Checkbox_Default_Url } from '@svg/checkbox/checkbox_default.
 export { default as Checkbox_Hover_Url } from '@svg/checkbox/checkbox_hover.svg?url';
 export { default as Checkbox_Pressed_Url } from '@svg/checkbox/checkbox_pressed.svg?url';
 export { default as Checkbox_Selected_Url } from '@svg/checkbox/checkbox_selected.svg?url';
+
+// icn - React Components
+export { default as Icn_Arrow_Right } from '@svg/icn/icn_arrow_right.svg?react';
+export { default as Icn_Failure } from '@svg/icn/icn_failure.svg?react';
+export { default as Icn_Plus_Black } from '@svg/icn/icn_plus_black.svg?react';
+export { default as Icn_Plus_Gray } from '@svg/icn/icn_plus_gray.svg?react';
+export { default as Icn_Success } from '@svg/icn/icn_success.svg?react';
+
+// divider - React Components
+export { default as Divider_Large } from '@svg/divider/divider_large.svg?react';
+export { default as Divider_Medium } from '@svg/divider/divider_medium.svg?react';
+export { default as Divider_Vertical } from '@svg/divider/divider_vertical.svg?react';
+
+// title
+export { default as Title } from '@svg/title.svg?react';
