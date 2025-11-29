@@ -58,5 +58,5 @@ export { default as Divider_Large } from '@svg/divider/divider_large.svg?react';
 export { default as Divider_Medium } from '@svg/divider/divider_medium.svg?react';
 export { default as Divider_Vertical } from '@svg/divider/divider_vertical.svg?react';
 
-// title
-export { default as Title } from '@svg/title.svg?react';
+// fastcloud
+export { default as Title } from '@svg/fastcloud.svg?react';

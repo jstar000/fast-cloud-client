@@ -4,25 +4,35 @@ import { TextField } from '@/shared/components/textField/TextField';
 import { CheckboxTextField } from '@/shared/components/checkboxTextField/CheckboxTextField';
 import { Tag } from '@/shared/components/tag/Tag';
 import { TAG_TYPES } from '@/shared/constants/tag';
+import { BUTTON_VARIANTS } from '@/shared/constants/button';
+import { Button } from '@/shared/components/button/Button';
+import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 
 const GenerateInstance = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
+      <header className={styles.title}>
         <h1 className={styles.mainTitle}>New Instance</h1>
         <h2 className={styles.subtitle}>
-          인스턴스 이름과 추가 옵션을 설정하면 인스턴스가 생성돼요.
+          인스턴스 이름과 템플릿 ID를 설정하면 인스턴스가 생성돼요.
         </h2>
-      </div>
+      </header>
 
       <div className={styles.inputContainer}>
         <div className={styles.instance}>
           <TextField
-            type="text"
+            type={TEXT_FIELD_TYPES.TEXT}
             label="인스턴스 이름"
             detail="인스턴스 이름을 입력해주세요."
             labelSize="large"
             placeholder="인스턴스 이름"
+          />
+          <TextField
+            type={TEXT_FIELD_TYPES.TEXT}
+            label="템플릿 ID"
+            detail="템플릿 ID를 입력해주세요."
+            labelSize="large"
+            placeholder="템플릿 ID"
           />
         </div>
 
@@ -76,6 +86,10 @@ const GenerateInstance = () => {
               <div className={styles.tagText}>표준 규칙 적용됨</div>
             </div>
           </div>
+        </div>
+
+        <div className={styles.buttonContainer}>
+          <Button variant={BUTTON_VARIANTS.LOGIN}>컨테이너 생성</Button>
         </div>
       </div>
     </div>

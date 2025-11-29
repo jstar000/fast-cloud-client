@@ -10,6 +10,7 @@ interface Props extends Omit<React.ComponentProps<'input'>, 'type'> {
   error?: boolean;
   label?: string;
   detail?: string;
+  textFieldSize?: 'small' | 'large';
   labelSize?: 'small' | 'large';
 }
 
@@ -18,7 +19,8 @@ export const TextField = ({
   error = false,
   label,
   detail,
-  labelSize = 'small',
+  textFieldSize = 'large',
+  labelSize = 'large',
   ...props
 }: Props) => {
   return (
@@ -26,7 +28,7 @@ export const TextField = ({
       <FieldLabel label={label} detail={detail} size={labelSize} />
       <input
         type={type}
-        className={`${styles.textField({ error })}`}
+        className={styles.textField({ error, textFieldSize })}
         aria-invalid={error}
         {...props}
       />

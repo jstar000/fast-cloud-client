@@ -6,7 +6,6 @@ export const container = recipe({
   base: {
     display: 'flex',
     flexDirection: 'column',
-    minWidth: '400px',
   },
   variants: {
     size: {
@@ -17,12 +16,21 @@ export const container = recipe({
         gap: '12px',
       },
     },
+    // label과 detail이 TextField를 벗어나지 않도록 TextField의 container에도 maxWidth 적용
+    textFieldSize: {
+      small: {
+        maxWidth: '200px',
+      },
+      large: {
+        maxWidth: '400px',
+      },
+    },
   },
 });
 
 export const textField = recipe({
   base: {
-    minWidth: '400px',
+    width: '100%',
     height: '44px',
     ...typographyVars.body_r_14,
     color: colors.gray000,
@@ -58,6 +66,14 @@ export const textField = recipe({
   },
 
   variants: {
+    textFieldSize: {
+      small: {
+        maxWidth: '200px',
+      },
+      large: {
+        maxWidth: '400px',
+      },
+    },
     error: {
       true: {
         backgroundColor: colors.error_08,

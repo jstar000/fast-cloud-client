@@ -5,9 +5,9 @@ import { typographyVars } from '@/shared/styles/tokens/typography.css';
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '120px 120px 0',
+  padding: '70px 120px 70px',
   alignItems: 'center',
-  gap: '60px',
+  gap: '50px', // fix
   width: '100%',
 });
 
@@ -34,6 +34,9 @@ export const inputContainer = style({
 });
 
 export const instance = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '12px',
   marginBottom: '24px',
 });
 
@@ -64,4 +67,8 @@ export const tagRow = style({
 export const tagText = style({
   ...typographyVars.title_r_16,
   color: colors.gray200,
+});
+
+export const buttonContainer = style({
+  marginTop: '30px', // fix
 });
