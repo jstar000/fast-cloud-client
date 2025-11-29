@@ -9,8 +9,9 @@ export const container = style({
   padding: '24px 60px',
   display: 'flex',
   justifyContent: 'space-between',
+  alignItems: 'center',
   zIndex: 1000,
-  backgroundColor: colors.gray900,
+  backgroundColor: colors.gray999,
 });
 
 export const buttonContainer = style({
