@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react';
 import { FieldLabel } from '@/shared/components/fieldLabel/FieldLabel';
 import * as styles from './generate-instance.css';
 import { TextField } from '@/shared/components/textField/TextField';
@@ -7,8 +8,23 @@ import { TAG_TYPES } from '@/shared/constants/tag';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { Button } from '@/shared/components/button/Button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
+import { useCreateInstanceMutation } from '@/apis/mutations/use-create-instance';
 
 const GenerateInstance = () => {
+  const { mutate } = useCreateInstanceMutation();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // 모든 name이 있는 input값 자동 수집
+    const formData = new FormData(e.currentTarget);
+    console.log(Object.fromEntries(formData));
+
+    mutate({
+      instanceName: formData.get('instanceName') as string,
+      templateId: Number(formData.get('templateId')),
+    });
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.title}>
@@ -17,22 +33,27 @@ const GenerateInstance = () => {
           인스턴스 이름과 템플릿 ID를 설정하면 인스턴스가 생성돼요.
         </h2>
       </header>
-
-      <div className={styles.inputContainer}>
+      // form 안에 있는 name 속성이 있는 모든 input 요소들의 값이 자동으로
+      수집됨
+      <form className={styles.inputContainer} onSubmit={handleSubmit}>
         <div className={styles.instance}>
           <TextField
             type={TEXT_FIELD_TYPES.TEXT}
+            name="instanceName"
             label="인스턴스 이름"
             detail="인스턴스 이름을 입력해주세요."
             labelSize="large"
             placeholder="인스턴스 이름"
+            required // 입력하지 않을 시 브라우저 기본 유효성 검사가 동작, '이 입력란을 작성하세요'라는 문구 표시
           />
           <TextField
             type={TEXT_FIELD_TYPES.TEXT}
+            name="templateId"
             label="템플릿 ID"
             detail="템플릿 ID를 입력해주세요."
             labelSize="large"
             placeholder="템플릿 ID"
+            required
           />
         </div>
 
@@ -89,9 +110,11 @@ const GenerateInstance = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <Button variant={BUTTON_VARIANTS.LOGIN}>컨테이너 생성</Button>
+          <Button type="submit" variant={BUTTON_VARIANTS.LOGIN}>
+            인스턴스 생성
+          </Button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
