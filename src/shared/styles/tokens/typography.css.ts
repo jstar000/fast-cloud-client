@@ -17,6 +17,12 @@ export const typographyVars = {
     lineHeight: '150%',
     letterSpacing: '-0.03em',
   },
+  heading_sb_40: {
+    fontSize: '2.5rem',
+    fontWeight: fontWeight.semibold,
+    lineHeight: '100%',
+    letterSpacing: '-0.02em',
+  },
   heading_sb_22: {
     fontSize: '1.375rem',
     fontWeight: fontWeight.semibold,

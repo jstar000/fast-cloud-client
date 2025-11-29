@@ -1,6 +1,7 @@
-import React from 'react';
 import * as styles from './TextField.css';
 import type { TextFieldType } from '@/shared/constants/textField';
+import { FieldLabel } from '@/shared/components/fieldLabel/FieldLabel';
+import type React from 'react';
 
 interface Props extends Omit<React.ComponentProps<'input'>, 'type'> {
   // input element의 모든 props를 상속하되, type prop만 제외
@@ -22,16 +23,7 @@ export const TextField = ({
 }: Props) => {
   return (
     <div className={styles.container({ size: labelSize })}>
-      {(label || detail) && (
-        <div className={styles.textContainer}>
-          {label && (
-            <label className={styles.label({ size: labelSize })}>{label}</label>
-          )}
-          {detail && (
-            <p className={styles.detail({ size: labelSize })}>{detail}</p>
-          )}
-        </div>
-      )}
+      <FieldLabel label={label} detail={detail} size={labelSize} />
       <input
         type={type}
         className={`${styles.textField({ error })}`}
