@@ -33,8 +33,7 @@ const GenerateInstance = () => {
           인스턴스 이름과 템플릿 ID를 설정하면 인스턴스가 생성돼요.
         </h2>
       </header>
-      // form 안에 있는 name 속성이 있는 모든 input 요소들의 값이 자동으로
-      수집됨
+      {/* form 안에 있는 name 속성이 있는 모든 input 요소들의 값이 자동으로 수집됨 */}
       <form className={styles.inputContainer} onSubmit={handleSubmit}>
         <div className={styles.instance}>
           <TextField
@@ -112,6 +111,9 @@ const GenerateInstance = () => {
         <div className={styles.buttonContainer}>
           <Button type="submit" variant={BUTTON_VARIANTS.LOGIN}>
             인스턴스 생성
+          </Button>
+          <Button type="button" variant={BUTTON_VARIANTS.TEXT_MEDIUM}>
+            이전으로
           </Button>
         </div>
       </form>

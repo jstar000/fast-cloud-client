@@ -5,9 +5,9 @@ import { typographyVars } from '@/shared/styles/tokens/typography.css';
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '70px 120px 70px',
+  padding: '100px 120px',
   alignItems: 'center',
-  gap: '50px', // fix
+  gap: '60px',
   width: '100%',
 });
 
@@ -70,5 +70,8 @@ export const tagText = style({
 });
 
 export const buttonContainer = style({
-  marginTop: '30px', // fix
+  marginTop: '48px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '24px',
 });
