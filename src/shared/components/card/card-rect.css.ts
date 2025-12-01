@@ -13,17 +13,14 @@ export const container = recipe({
     outline: `1px solid ${colors.gray000_06}`,
     outlineOffset: '-1px',
     minHeight: '430px',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.4s ease',
     userSelect: 'none',
     selectors: {
       '&:hover': {
         background: `linear-gradient(180deg, transparent 0%, ${colors.primary_20} 100%)`,
         outline: `1px solid ${colors.gray000_02}`,
         outlineOffset: '-1px',
-        transform: 'scale(1.01)',
-      },
-      '&:active': {
-        transform: 'scale(0.99)', // GPU 가속
+        transform: 'translateY(-20px)',
       },
     },
   },
