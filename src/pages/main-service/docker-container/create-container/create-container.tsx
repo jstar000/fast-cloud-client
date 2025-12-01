@@ -4,10 +4,12 @@ import { Button } from '@/shared/components/button/Button';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { useCreateContainerMutation } from '@/apis/mutations/use-create-container';
+import { useContainerList } from '@/apis/queries/use-get-container-list';
 import type { FormEvent } from 'react';
 
 const CreateContainer = () => {
   const { mutate: createContainer } = useCreateContainerMutation();
+  const { refetch: getContainerList } = useContainerList();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,6 +23,11 @@ const CreateContainer = () => {
       externalPort: Number(formData.get('externalPort')),
       internalPort: Number(formData.get('internalPort')),
     });
+  };
+
+  const handleContainerButtonClick = async () => {
+    const result = await getContainerList();
+    console.log(result.data);
   };
 
   return (
@@ -75,6 +82,14 @@ const CreateContainer = () => {
 
         <Button type="submit" variant={BUTTON_VARIANTS.LOGIN}>
           컨테이너 생성
+        </Button>
+
+        <Button
+          type="button"
+          variant={BUTTON_VARIANTS.LOGIN}
+          onClick={handleContainerButtonClick}
+        >
+          컨테이너 조회
         </Button>
       </form>
     </div>

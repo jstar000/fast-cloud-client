@@ -19,3 +19,24 @@ export interface CreateContainerResponse {
   requestTime: string;
   status: string;
 }
+
+// 컨테이너 조회
+export interface Summary {
+  totalContainers: number;
+  runingContainers: number;
+  clusterCount: number;
+}
+
+export interface Containers {
+  containerId: string;
+  clusterName: string;
+  status: string;
+  image: string;
+  ports: Ports;
+  createdAt: string;
+}
+
+export interface ContainerListResponse {
+  summary: Summary;
+  containers: Containers[];
+}

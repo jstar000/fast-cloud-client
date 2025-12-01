@@ -3,11 +3,11 @@ export const API_ENDPOINTS = {
     GET_BUCKET: 'iaas/bucket',
     CREATE_BUCKET: 'iaas/bucket',
     UPLOAD_BUCKET: 'iaas/bucket/upload',
-    GET_INSTANCE: 'iaas/compute',
+    GET_INSTANCE_LIST: 'iaas/compute',
     CREATE_INSTANCE: 'iaas/compute',
   },
   CAAS: {
-    GET_CONTAINER: 'caas/container',
+    GET_CONTAINER_LIST: 'caas/container',
     CREATE_CONTAINER: 'caas/container',
   },
   USER: {
