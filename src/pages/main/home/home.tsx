@@ -1,5 +1,5 @@
 import { Button } from '@/shared/components/button/Button';
-import * as styles from './Home.css';
+import * as styles from './home.css';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { useNavigate } from 'react-router';
 import { ROUTES } from '@/routes/paths';

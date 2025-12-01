@@ -1,4 +1,4 @@
-import Home from '@/pages/home/Home';
+import Home from '@/pages/main/home/home';
 import CreateContainer from '@/pages/main-service/docker-container/create-container/create-container';
 import CreateInstance from '@/pages/main-service/mini-pc/create-instance/create-instance';
 import { TestPage } from '@/pages/Test/TestPage';

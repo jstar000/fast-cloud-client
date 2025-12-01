@@ -41,6 +41,7 @@ export { default as Checkbox_Pressed } from '@svg/checkbox/checkbox_pressed.svg?
 export { default as Checkbox_Selected } from '@svg/checkbox/checkbox_selected.svg?react';
 
 // checkbox - URL for CSS
+export { default as Check } from '@svg/checkbox/check.svg';
 export { default as Checkbox_Default_Url } from '@svg/checkbox/checkbox_default.svg?url';
 export { default as Checkbox_Hover_Url } from '@svg/checkbox/checkbox_hover.svg?url';
 export { default as Checkbox_Pressed_Url } from '@svg/checkbox/checkbox_pressed.svg?url';
