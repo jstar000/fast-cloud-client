@@ -1,6 +1,6 @@
 import Home from '@/pages/home/Home';
-import GenerateContainer from '@/pages/main-service/docker-container/generate-container/generate-container';
-import GenerateInstance from '@/pages/main-service/mini-pc/generate-instance/generate-instance';
+import CreateContainer from '@/pages/main-service/docker-container/create-container/create-container';
+import CreateInstance from '@/pages/main-service/mini-pc/create-instance/create-instance';
 import { TestPage } from '@/pages/Test/TestPage';
 import Layout from '@/routes/layout';
 import { ROUTES } from '@/routes/paths';
@@ -16,12 +16,12 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: ROUTES.GENERATE_INSTANCE,
-        element: <GenerateInstance />,
+        path: ROUTES.CREATE_INSTANCE,
+        element: <CreateInstance />,
       },
       {
-        path: ROUTES.GENERATE_CONTAINER,
-        element: <GenerateContainer />,
+        path: ROUTES.CREATE_CONTAINER,
+        element: <CreateContainer />,
       },
       {
         path: ROUTES.TEST,

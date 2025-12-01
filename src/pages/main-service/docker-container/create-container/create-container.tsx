@@ -1,10 +1,10 @@
 import { TextField } from '@/shared/components/textField/TextField';
-import * as styles from './generate-container.css';
+import * as styles from './create-container.css';
 import { Button } from '@/shared/components/button/Button';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 
-const GenerateContainer = () => {
+const CreateContainer = () => {
   return (
     <div className={styles.container}>
       <header className={styles.title}>
@@ -53,4 +53,4 @@ const GenerateContainer = () => {
   );
 };
 
-export default GenerateContainer;
+export default CreateContainer;

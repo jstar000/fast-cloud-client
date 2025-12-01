@@ -1,6 +1,6 @@
 import type { FormEvent } from 'react';
 import { FieldLabel } from '@/shared/components/fieldLabel/FieldLabel';
-import * as styles from './generate-instance.css';
+import * as styles from './create-instance.css';
 import { TextField } from '@/shared/components/textField/TextField';
 import { CheckboxTextField } from '@/shared/components/checkboxTextField/CheckboxTextField';
 import { Tag } from '@/shared/components/tag/Tag';
@@ -10,7 +10,7 @@ import { Button } from '@/shared/components/button/Button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { useCreateInstanceMutation } from '@/apis/mutations/use-create-instance';
 
-const GenerateInstance = () => {
+const CreateInstance = () => {
   const { mutate } = useCreateInstanceMutation();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -121,4 +121,4 @@ const GenerateInstance = () => {
   );
 };
 
-export default GenerateInstance;
+export default CreateInstance;
