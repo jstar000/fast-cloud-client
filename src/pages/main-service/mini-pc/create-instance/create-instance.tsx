@@ -11,7 +11,7 @@ import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { useCreateInstanceMutation } from '@/apis/mutations/use-create-instance';
 
 const CreateInstance = () => {
-  const { mutate } = useCreateInstanceMutation();
+  const { mutate: createInstance } = useCreateInstanceMutation();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const CreateInstance = () => {
     const formData = new FormData(e.currentTarget);
     console.log(Object.fromEntries(formData));
 
-    mutate({
+    createInstance({
       instanceName: formData.get('instanceName') as string,
       templateId: Number(formData.get('templateId')),
     });

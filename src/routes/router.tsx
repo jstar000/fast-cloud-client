@@ -4,13 +4,17 @@ import CreateInstance from '@/pages/main-service/mini-pc/create-instance/create-
 import { TestPage } from '@/pages/Test/TestPage';
 import Layout from '@/routes/layout';
 import { ROUTES } from '@/routes/paths';
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout hasButton={true} />,
     children: [
+      {
+        index: true,
+        element: <Navigate to={ROUTES.HOME} replace />,
+      },
       {
         path: ROUTES.HOME,
         element: <Home />,

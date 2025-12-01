@@ -1,31 +1,31 @@
+import { Button } from '@/shared/components/button/Button';
 import * as styles from './Home.css';
+import { BUTTON_VARIANTS } from '@/shared/constants/button';
+import { useNavigate } from 'react-router';
+import { ROUTES } from '@/routes/paths';
 
 function Home() {
+  const navigate = useNavigate();
+  const handleStartClick = () => {
+    navigate(ROUTES.NEW_INSTANCE);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <h1 className={styles.title}>CLOUD STANDARD</h1>
-        <h2 className={styles.subtitle}>입문자용 클라우드 서비스</h2>
-
-        <p className={styles.description2}>
-          복잡하고 반복적인 인프라 설정 과정을 추상화하고, 사용 목적에 맞는
-          표준화된 템플릿을 제공합니다.
-        </p>
-
-        <div className={styles.badge}>
-          <span className={styles.buttonText}>디자인 토큰 적용 완료</span>
-        </div>
-
-        <div>
-          <button className={styles.button}>
-            <span className={styles.buttonText}>시작하기</span>
-          </button>
-        </div>
-
-        <div className={styles.errorText}>
-          <span className={styles.description}>에러 발생 시 이렇게 표시</span>
-        </div>
+      <div className={styles.titleContainer}>
+        <h1 className={styles.title}>모든 클라우드 서비스를 한곳에서.</h1>
+        <h2 className={styles.subtitle}>
+          {`미니 PC 대여부터 컨테이너 서비스, 오브젝트 스토리지까지\n필요한 모든 클라우드 인프라를 FastCloud에서 쉽고 빠르게 이용하세요.`}
+        </h2>
       </div>
+
+      <Button
+        type="button"
+        variant={BUTTON_VARIANTS.HOME}
+        onClick={handleStartClick}
+      >
+        시작하기
+      </Button>
     </div>
   );
 }
