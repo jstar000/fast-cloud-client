@@ -73,5 +73,5 @@ export const buttonContainer = style({
   marginTop: '48px',
   display: 'flex',
   flexDirection: 'column',
-  gap: '24px',
+  gap: '16px',
 });
