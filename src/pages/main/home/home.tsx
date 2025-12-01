@@ -19,13 +19,15 @@ function Home() {
         </h2>
       </div>
 
-      <Button
-        type="button"
-        variant={BUTTON_VARIANTS.HOME}
-        onClick={handleStartClick}
-      >
-        시작하기
-      </Button>
+      <div className={styles.button}>
+        <Button
+          type="button"
+          variant={BUTTON_VARIANTS.HOME}
+          onClick={handleStartClick}
+        >
+          시작하기
+        </Button>
+      </div>
     </div>
   );
 }
