@@ -7,11 +7,18 @@ export const container = style({
   display: 'flex',
   flexDirection: 'column',
   borderRadius: '20px',
-  outline: `1px solid ${colors.gray800}`,
+  outline: `1px solid ${colors.gray000_06}`,
   outlineOffset: '-1px',
   padding: '28px',
   gap: '32px',
   width: 'fit-content',
+  transition: 'background 0.3s ease, transform 0.3s ease, outline 0.3s ease',
+
+  ':hover': {
+    background: colors.cardGradGray,
+    transform: 'translateY(-20px)',
+    outline: `1px solid ${colors.gray000_10}`,
+  },
 });
 
 // 클러스터 이름, 실행 status, 생성일

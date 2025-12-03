@@ -32,6 +32,8 @@ export const colors = {
     'radial-gradient(135.07% 124.3% at 50% -59.67%, rgba(0, 42, 140, 0.70) 0%, rgba(7, 9, 13, 0.00) 100%), #07090D',
   cardGradPrimary:
     'radial-gradient(574.85% 120.26% at 50% -15.34%, rgba(0, 89, 255, 0.00) 0%, rgba(0, 89, 255, 0.08) 61.09%, rgba(0, 89, 255, 0.24) 100%)',
+  cardGradGray:
+    'radial-gradient(116.61% 120.26% at 50% -15.34%, rgba(137, 150, 169, 0.00) 29.33%, rgba(137, 150, 169, 0.06) 61.54%, rgba(137, 150, 169, 0.15) 100%)',
 
   // Feedback
   error: '#FF6161',

@@ -17,7 +17,7 @@ export const container = recipe({
     userSelect: 'none',
     selectors: {
       '&:hover': {
-        background: `linear-gradient(180deg, transparent 0%, ${colors.primary_20} 100%)`,
+        background: colors.cardGradPrimary,
         outline: `1px solid ${colors.gray000_02}`,
         outlineOffset: '-1px',
         transform: 'translateY(-20px)',

@@ -7,6 +7,7 @@ import { ROUTES } from '@/routes/paths';
 import { createBrowserRouter, Navigate } from 'react-router';
 import SelectService from '@/pages/main/service/select-service';
 import SelectInstanceType from '@/pages/main-service/mini-pc/select-instance-type/select-instance-type';
+import ContainerInfo from '@/pages/main-service/docker-container/container-info/container-info';
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.CREATE_CONTAINER,
         element: <CreateContainer />,
+      },
+      {
+        path: ROUTES.CONTAINER_INFO,
+        element: <ContainerInfo />,
       },
       {
         path: ROUTES.TEST,
