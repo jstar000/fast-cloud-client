@@ -22,6 +22,8 @@ const getStatusChipType = (status: string): StatusChipType => {
   switch (status.toLowerCase()) {
     case 'running':
       return STATUS_CHIP_TYPES.IN_PROGRESS;
+    case 'pending':
+      return STATUS_CHIP_TYPES.PENDING;
     case 'stopped':
       return STATUS_CHIP_TYPES.STOP;
     case 'error':
@@ -35,6 +37,8 @@ const getStatusLabel = (status: string): string => {
   switch (status.toLowerCase()) {
     case 'running':
       return '실행 중';
+    case 'pending':
+      return '대기 중';
     case 'stopped':
       return '중지됨';
     case 'error':

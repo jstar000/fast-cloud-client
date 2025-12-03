@@ -46,6 +46,7 @@ export const detailBox = style({
 export const detailBoxText = style({
   ...typographyVars.body_r_14,
   color: colors.gray400,
+  marginTop: '1px', // TODO: marginTop: detailBoxNum과 정렬 맞도록 임시 처리, 원인 알아보기
 });
 
 export const detailBoxNum = style({

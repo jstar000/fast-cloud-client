@@ -1,7 +1,6 @@
 import { colors } from '@/shared/styles/tokens/colors.css';
 import { typographyVars } from '@/shared/styles/tokens/typography.css';
 import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
 
 export const container = style({
   display: 'flex',

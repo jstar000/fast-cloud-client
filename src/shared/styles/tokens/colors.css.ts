@@ -40,6 +40,8 @@ export const colors = {
   error_08: 'rgba(255, 97, 97, 0.08)',
   green: '#22C900',
   green_14: 'rgba(34, 201, 0, 0.14)',
+  orange: '#FF9A3D',
+  orange_14: 'rgba(255, 154, 61, 0.14)',
 } as const;
 
 export type ColorToken = keyof typeof colors;
