@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import { caasQueryKeys } from '../constants/query-key';
 import { HTTPMethod, request } from '../request';
 import type { ContainerListResponse } from '../types/caas';
@@ -12,7 +12,7 @@ export const getContainerList = () => {
 };
 
 export const useContainerList = () => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: caasQueryKeys.container(),
     queryFn: () => getContainerList(),
   });
