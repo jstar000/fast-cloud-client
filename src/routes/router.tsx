@@ -9,6 +9,7 @@ import SelectService from '@/pages/main/service/select-service';
 import SelectInstanceType from '@/pages/main-service/mini-pc/select-instance-type/select-instance-type';
 import ContainerInfo from '@/pages/main-service/docker-container/container-info/container-info';
 
+// TODO: 라우터 정리
 export const router = createBrowserRouter([
   {
     path: '/',
