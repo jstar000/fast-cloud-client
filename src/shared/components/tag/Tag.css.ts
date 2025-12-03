@@ -11,6 +11,7 @@ export const container = recipe({
     alignItems: 'center',
     justifyContent: 'center',
     whiteSpace: 'nowrap',
+    width: 'fit-content',
   },
 
   variants: {

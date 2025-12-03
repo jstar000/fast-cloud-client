@@ -1,13 +1,11 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { colors } from '@styles/tokens/colors.css';
 import { typographyVars } from '@styles/tokens/typography.css';
-import { style } from '@vanilla-extract/css';
 
 export const container = recipe({
   base: {
     display: 'flex',
     flexDirection: 'column',
-    minWidth: '400px',
   },
   variants: {
     size: {
@@ -18,43 +16,13 @@ export const container = recipe({
         gap: '12px',
       },
     },
-  },
-});
-
-export const textContainer = style({
-  display: 'flex',
-  flexDirection: 'column',
-  margin: '0 2px',
-  gap: '2px',
-});
-
-export const label = recipe({
-  base: {
-    color: colors.gray500,
-  },
-  variants: {
-    size: {
+    // label과 detail이 TextField를 벗어나지 않도록 TextField의 container에도 maxWidth 적용
+    textFieldSize: {
       small: {
-        ...typographyVars.body_m_14,
+        maxWidth: '200px',
       },
       large: {
-        ...typographyVars.title_m_16,
-      },
-    },
-  },
-});
-
-export const detail = recipe({
-  base: {
-    color: colors.gray700,
-  },
-  variants: {
-    size: {
-      small: {
-        ...typographyVars.caption_r_12,
-      },
-      large: {
-        ...typographyVars.body_r_14,
+        maxWidth: '400px',
       },
     },
   },
@@ -62,14 +30,15 @@ export const detail = recipe({
 
 export const textField = recipe({
   base: {
-    minWidth: '400px',
+    width: '100%',
     height: '44px',
     ...typographyVars.body_r_14,
     color: colors.gray000,
     padding: '0 16px',
     backgroundColor: colors.gray000_02,
     borderRadius: '10px',
-    transition: 'all 0.2s ease',
+    border: '1px solid transparent',
+    transition: 'background-color 0.2s ease, border-color 0.2s ease',
     outline: 'none',
 
     '::placeholder': {
@@ -87,6 +56,7 @@ export const textField = recipe({
     // focused/typing
     ':focus': {
       backgroundColor: colors.gray000_04,
+      borderColor: colors.gray800,
     },
 
     // filled (값이 입력된 상태)
@@ -98,6 +68,14 @@ export const textField = recipe({
   },
 
   variants: {
+    textFieldSize: {
+      small: {
+        maxWidth: '200px',
+      },
+      large: {
+        maxWidth: '400px',
+      },
+    },
     error: {
       true: {
         backgroundColor: colors.error_08,

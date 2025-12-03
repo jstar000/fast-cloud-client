@@ -5,7 +5,7 @@ import { style } from '@vanilla-extract/css';
 export const container = style({
   display: 'flex',
   gap: '12px',
-  minWidth: '400px',
+  maxWidth: '400px',
 });
 
 export const checkbox = style({

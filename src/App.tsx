@@ -1,8 +1,8 @@
-import { TestPage } from '@/pages/Test/TestPage';
-import Header from '@/shared/components/header/Header';
+import { router } from '@/routes/router';
+import { RouterProvider } from 'react-router';
 
 function App() {
-  return <TestPage />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
