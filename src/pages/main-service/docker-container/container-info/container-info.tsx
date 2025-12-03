@@ -3,6 +3,7 @@ import * as styles from './container-info.css';
 import CardContainer from '@/shared/components/card/card-container/card-container';
 import { useContainerList } from '@/apis/queries/use-get-container-list';
 import { Suspense } from 'react';
+import { Loading } from '@/shared/components/loading/Loading';
 
 const ContainerContent = () => {
   const { data } = useContainerList();
@@ -63,7 +64,7 @@ const ContainerInfo = () => {
       </header>
 
       {/* TODO: 폴백 컴포넌트 추가 */}
-      <Suspense fallback={<div>로딩 중...</div>}>
+      <Suspense fallback={<Loading />}>
         <ContainerContent />
       </Suspense>
     </div>
