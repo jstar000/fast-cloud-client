@@ -13,12 +13,12 @@ export const container = recipe({
     outline: `1px solid ${colors.gray000_06}`,
     outlineOffset: '-1px',
     minHeight: '430px',
-    transition: 'all 0.4s ease',
+    transition: 'background 0.3s ease, outline 0.3s ease, transform 0.3s ease',
     userSelect: 'none',
     selectors: {
       '&:hover': {
         background: colors.cardGradPrimary,
-        outline: `1px solid ${colors.gray000_02}`,
+        outline: `1px solid ${colors.gray000_10}`,
         outlineOffset: '-1px',
         transform: 'translateY(-20px)',
       },

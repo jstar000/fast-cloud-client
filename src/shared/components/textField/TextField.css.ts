@@ -37,7 +37,8 @@ export const textField = recipe({
     padding: '0 16px',
     backgroundColor: colors.gray000_02,
     borderRadius: '10px',
-    transition: 'all 0.2s ease',
+    border: '1px solid transparent',
+    transition: 'background-color 0.2s ease, border-color 0.2s ease',
     outline: 'none',
 
     '::placeholder': {
@@ -55,6 +56,7 @@ export const textField = recipe({
     // focused/typing
     ':focus': {
       backgroundColor: colors.gray000_04,
+      borderColor: colors.gray800,
     },
 
     // filled (값이 입력된 상태)

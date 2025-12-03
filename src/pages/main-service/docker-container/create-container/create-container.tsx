@@ -55,7 +55,7 @@ const CreateContainer = () => {
           label="도커 이미지 링크"
           detail="도커 이미지의 링크를 입력해주세요."
           labelSize="large"
-          textFieldSize="small"
+          textFieldSize="large"
           placeholder="도커 이미지 링크"
           required
         />
