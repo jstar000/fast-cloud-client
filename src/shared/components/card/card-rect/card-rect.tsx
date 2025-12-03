@@ -1,8 +1,8 @@
 import { Check, Divider_Medium } from '@/assets/svg';
 import * as styles from './card-rect.css';
-import { Tag } from '../tag/Tag';
+import { Tag } from '../../tag/Tag';
 import { TAG_TYPES } from '@/shared/constants/tag';
-import { Button } from '../button/Button';
+import { Button } from '../../button/Button';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
 
 interface Props {

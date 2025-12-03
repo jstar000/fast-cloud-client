@@ -1,4 +1,4 @@
-import CardRect from '@/shared/components/card/card-rect';
+import CardRect from '@/shared/components/card/card-rect/card-rect';
 import * as styles from './select-instance-type.css';
 import { useNavigate } from 'react-router';
 import { ROUTES } from '@/routes/paths';
