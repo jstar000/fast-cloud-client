@@ -11,11 +11,23 @@ const fontWeight = {
 } as const;
 
 export const typographyVars = {
+  heading_sb_80: {
+    fontSize: '5rem',
+    fontWeight: fontWeight.semibold,
+    lineHeight: '100%',
+    letterSpacing: '-0.02em',
+  },
   heading_sb_60: {
     fontSize: '3.75rem',
     fontWeight: fontWeight.semibold,
     lineHeight: '150%',
     letterSpacing: '-0.03em',
+  },
+  heading_sb_40: {
+    fontSize: '2.5rem',
+    fontWeight: fontWeight.semibold,
+    lineHeight: '100%',
+    letterSpacing: '-0.02em',
   },
   heading_sb_22: {
     fontSize: '1.375rem',

@@ -75,7 +75,7 @@ export default [
       'import/no-unresolved': 'off', // Vite special imports (?react, ?url 등) 허용
 
       /**=== 기타 ===*/
-      'no-console': ['warn', { allow: ['warn', 'error'] }], // console.log() 경고. 그 외 허용
+      'no-console': ['warn', { allow: ['log', 'warn', 'error'] }], // console.log, warn, error 허용
     },
     settings: {
       react: {
