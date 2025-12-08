@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "http://fast-cloud.kro.kr:30080/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
