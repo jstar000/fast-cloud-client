@@ -29,7 +29,7 @@ export const colors = {
   primary_20: 'rgba(41, 116, 255, 0.20)',
   primaryDark: '#1B68F8',
   bgGrad:
-    'radial-gradient(135.07% 124.3% at 50% -59.67%, rgba(0, 42, 140, 0.70) 0%, rgba(7, 9, 13, 0.00) 100%), #07090D',
+    'radial-gradient(ellipse 135% 78% at 50% -60%, rgba(0, 42, 140, 0.7) 0%, rgba(7, 9, 13, 0) 100%), #07090D',
   cardGradPrimary:
     'radial-gradient(574.85% 120.26% at 50% -15.34%, rgba(0, 89, 255, 0.00) 0%, rgba(0, 89, 255, 0.08) 61.09%, rgba(0, 89, 255, 0.24) 100%);',
   cardGradGray:

@@ -10,6 +10,7 @@ import { Button } from '@/shared/components/button/Button';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 import { useCreateInstanceMutation } from '@/apis/mutations/use-create-instance';
 import { useNavigate } from 'react-router';
+import { ROUTES } from '@/routes/paths';
 
 const CreateInstance = () => {
   const { mutate: createInstance } = useCreateInstanceMutation();
@@ -113,6 +114,13 @@ const CreateInstance = () => {
         <div className={styles.buttonContainer}>
           <Button type="submit" variant={BUTTON_VARIANTS.LOGIN}>
             인스턴스 생성
+          </Button>
+          <Button
+            type="button"
+            variant={BUTTON_VARIANTS.LOGIN}
+            onClick={() => navigate(ROUTES.INSTANCE_INFO)}
+          >
+            인스턴스 조회
           </Button>
           <Button
             type="button"

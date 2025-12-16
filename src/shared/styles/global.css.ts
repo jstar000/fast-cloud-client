@@ -5,7 +5,8 @@ globalStyle('body', {
   minWidth: '1280px',
   fontFamily:
     '"Pretendard Variable", Pretendard, -apple-system, "Helvetica Neue", Arial, sans-serif',
-  background: colors.gray999,
+  background: colors.bgGrad,
+  backgroundAttachment: 'fixed',
   paddingTop: '85px', // 헤더 높이만큼 아래로 이동
 });
 

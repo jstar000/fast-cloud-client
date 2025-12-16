@@ -1,11 +1,8 @@
-import {
-  STATUS_CHIP_TYPES,
-  type StatusChipType,
-} from '@/shared/constants/statusChip';
 import { StatusChip } from '../../statusChip/StatusChip';
 import * as styles from './card-container.css';
 import { Icn_Time } from '@/assets/svg';
 import { formatDateTime } from '@/shared/utils/format-date';
+import { getStatusChipType, getStatusLabel } from '@/shared/utils/status';
 import { TextField } from '../../textField/TextField';
 import { TEXT_FIELD_TYPES } from '@/shared/constants/textField';
 
@@ -17,36 +14,6 @@ interface Props {
   internalPort: string;
   createdAt: string;
 }
-
-const getStatusChipType = (status: string): StatusChipType => {
-  switch (status.toLowerCase()) {
-    case 'running':
-      return STATUS_CHIP_TYPES.IN_PROGRESS;
-    case 'pending':
-      return STATUS_CHIP_TYPES.PENDING;
-    case 'stopped':
-      return STATUS_CHIP_TYPES.STOP;
-    case 'error':
-      return STATUS_CHIP_TYPES.FAIL;
-    default:
-      return STATUS_CHIP_TYPES.IN_PROGRESS;
-  }
-};
-
-const getStatusLabel = (status: string): string => {
-  switch (status.toLowerCase()) {
-    case 'running':
-      return '실행 중';
-    case 'pending':
-      return '대기 중';
-    case 'stopped':
-      return '중지됨';
-    case 'error':
-      return '오류';
-    default:
-      return status;
-  }
-};
 
 const CardContainer = ({
   clusterName,
