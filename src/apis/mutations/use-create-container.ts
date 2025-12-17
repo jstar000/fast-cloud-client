@@ -1,10 +1,11 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { API_ENDPOINTS } from '../constants/api-endpoints';
 import { HTTPMethod, request } from '../request';
 import type {
   CreateContainerResponse,
   CreateContainerRequest,
 } from '../types/caas';
+import { caasQueryKeys } from '../constants/query-key';
 
 const postCreateContainer = ({
   clusterName,
@@ -25,10 +26,12 @@ const postCreateContainer = ({
 };
 
 export const useCreateContainerMutation = () => {
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: postCreateContainer,
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: caasQueryKeys.container() });
     },
   });
 };
