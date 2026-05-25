@@ -41,10 +41,18 @@ export const request = async <T>(config: RequestConfig): Promise<T> => {
   const { method, url, query, body } = config;
 
   try {
+    const isFormData = body instanceof FormData;
+    const bodyOptions =
+      method === HTTPMethod.GET
+        ? {}
+        : isFormData
+          ? { body: body as FormData } // FormData면 ky가 multipart/form-data 자동 설정
+          : { json: body }; // 그 외에는 JSON 직렬화
+
     const response = await apiClient(url, {
       method,
       searchParams: query as Record<string, string | number | boolean>,
-      json: method !== HTTPMethod.GET ? body : undefined, // 자동으로 헤더에 Content-Type: application/json 추가
+      ...bodyOptions,
     }).json<SuccessResponse<T>>();
 
     return response.data; // 성공 시 data 필드만 추출해서 반환

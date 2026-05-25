@@ -3,6 +3,8 @@ import type {
   BucketFileListResponse,
   BucketListResponse,
   CreateBucketResponse,
+  UploadBucketFileResponse,
+  UploadedFile,
 } from '../types/iaas';
 
 export const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';
@@ -98,7 +100,41 @@ export const getMockBucketFileList = (
     bucket: bucketName,
     objects: [],
   };
-  return delay(data);
+  return delay({
+    bucket: data.bucket,
+    objects: [...data.objects],
+  });
+};
+
+export const uploadMockBucketFiles = (
+  bucket: string,
+  files: File[]
+): Promise<UploadBucketFileResponse> => {
+  const nowIso = new Date().toISOString();
+  const uploaded: UploadedFile[] = files.map((file) => ({
+    name: file.name,
+    bytes: file.size,
+    content_type: file.type || 'application/octet-stream',
+    etag: `mock-etag-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+    last_modified: nowIso,
+  }));
+
+  if (!mockBucketFiles[bucket]) {
+    mockBucketFiles[bucket] = { bucket, objects: [] };
+  }
+  mockBucketFiles[bucket].objects.push(
+    ...files.map((file) => ({
+      name: file.name,
+      size: file.size,
+      last_modified: nowIso,
+    }))
+  );
+
+  return delay({
+    bucket,
+    uploadCount: files.length,
+    files: uploaded,
+  });
 };
 
 export const createMockBucket = (

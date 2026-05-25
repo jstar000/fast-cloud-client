@@ -430,3 +430,131 @@ export const folderPath = style({
 export const fileNameText = style({
   color: colors.gray000,
 });
+
+// 파일 업로더
+export const uploaderSection = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '12px',
+});
+
+export const uploaderDropzone = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '8px',
+  padding: '32px 20px',
+  borderRadius: '12px',
+  border: `1px dashed ${colors.gray000_10}`,
+  background: colors.gray000_04,
+  color: colors.gray400,
+  ...typographyVars.body_r_14,
+  cursor: 'pointer',
+  transition: 'background 0.2s ease, border-color 0.2s ease',
+
+  ':hover': {
+    background: colors.gray000_06,
+    borderColor: colors.gray000_10,
+  },
+});
+
+export const uploaderDropzoneActive = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '8px',
+  padding: '32px 20px',
+  borderRadius: '12px',
+  border: `1px dashed ${colors.gray300}`,
+  background: colors.gray000_10,
+  color: colors.gray000,
+  ...typographyVars.body_m_14,
+  cursor: 'pointer',
+  transition: 'background 0.2s ease, border-color 0.2s ease',
+});
+
+export const uploaderHint = style({
+  ...typographyVars.body_r_14,
+  color: colors.gray500,
+});
+
+export const uploaderFileList = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px',
+});
+
+export const uploaderFileRow = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '12px',
+  padding: '12px 16px',
+  borderRadius: '8px',
+  background: colors.gray000_06,
+});
+
+export const uploaderFileMeta = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2px',
+  minWidth: 0,
+  flex: 1,
+});
+
+export const uploaderFileName = style({
+  ...typographyVars.body_m_14,
+  color: colors.gray000,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+});
+
+export const uploaderFileSize = style({
+  ...typographyVars.body_r_14,
+  color: colors.gray500,
+});
+
+export const uploaderRemoveButton = style({
+  border: 'none',
+  background: 'transparent',
+  color: colors.gray400,
+  ...typographyVars.body_m_14,
+  cursor: 'pointer',
+  padding: '4px 8px',
+  borderRadius: '6px',
+  transition: 'background 0.2s ease, color 0.2s ease',
+
+  ':hover': {
+    background: colors.gray000_06,
+    color: colors.gray000,
+  },
+});
+
+export const uploaderActions = style({
+  display: 'flex',
+  justifyContent: 'flex-end',
+});
+
+export const uploaderUploadButton = style({
+  padding: '12px 24px',
+  borderRadius: '999px',
+  border: 'none',
+  background: colors.gray000,
+  color: colors.gray900,
+  ...typographyVars.body_m_14,
+  cursor: 'pointer',
+  transition: 'background 0.2s ease',
+
+  ':hover': {
+    background: colors.gray200,
+  },
+
+  ':disabled': {
+    background: colors.gray000_10,
+    color: colors.gray500,
+    cursor: 'not-allowed',
+  },
+});
