@@ -100,7 +100,10 @@ export const getMockBucketFileList = (
     bucket: bucketName,
     objects: [],
   };
-  return delay(data);
+  return delay({
+    bucket: data.bucket,
+    objects: [...data.objects],
+  });
 };
 
 export const uploadMockBucketFiles = (
