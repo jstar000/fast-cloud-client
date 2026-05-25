@@ -3,8 +3,10 @@ import { API_ENDPOINTS } from '../constants/api-endpoints';
 import { HTTPMethod, request } from '../request';
 import type { CreateBucketRequest, CreateBucketResponse } from '../types/iaas';
 import { iaasQueryKeys } from '../constants/query-key';
+import { USE_MOCK, createMockBucket } from '../mocks/iaas-bucket';
 
 const postCreateBucket = ({ name }: CreateBucketRequest) => {
+  if (USE_MOCK) return createMockBucket(name);
   return request<CreateBucketResponse>({
     method: HTTPMethod.POST,
     url: API_ENDPOINTS.IAAS.CREATE_BUCKET,

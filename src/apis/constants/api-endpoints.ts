@@ -1,6 +1,7 @@
 export const API_ENDPOINTS = {
   IAAS: {
-    GET_BUCKET_LIST: 'iaas/bucket?bucket=test', // 파라미터 고정(임시)
+    GET_BUCKET_LIST: 'iaas/bucket',
+    GET_BUCKET_FILE_LIST: 'iaas/bucket',
     CREATE_BUCKET: 'iaas/bucket',
     UPLOAD_BUCKET: 'iaas/bucket/upload',
     GET_INSTANCE_LIST: 'iaas/compute',

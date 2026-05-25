@@ -6,7 +6,7 @@ import { typographyVars } from '@/shared/styles/tokens/typography.css';
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '120px 120px 0',
+  padding: '120px',
   gap: '40px',
   width: '100%',
 });
@@ -113,7 +113,24 @@ export const bucketCard = style({
   gap: '16px',
   padding: '20px',
   borderRadius: '16px',
-  background: colors.gray000_06,
+  background: colors.gray000_08,
+  cursor: 'pointer',
+  transition: 'background 0.2s ease',
+
+  ':hover': {
+    background: colors.gray000_10,
+  },
+});
+
+export const bucketCardSelected = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '16px',
+  padding: '20px',
+  borderRadius: '16px',
+  background: 'rgba(255, 255, 255, 0.13)',
+  cursor: 'pointer',
+  transition: 'background 0.2s ease',
 });
 
 export const bucketHeader = style({
@@ -173,7 +190,7 @@ export const folderItem = style({
   gap: '12px',
   padding: '16px 20px',
   borderRadius: '12px',
-  background: colors.gray000_06,
+  background: colors.gray000_08,
   cursor: 'pointer',
   transition: 'background 0.2s ease',
 
@@ -188,7 +205,7 @@ export const folderItemSelected = style({
   gap: '12px',
   padding: '16px 20px',
   borderRadius: '12px',
-  background: colors.gray000,
+  background: colors.gray400,
   cursor: 'pointer',
 });
 
@@ -298,7 +315,7 @@ export const uploadLocationPath = style({
   gap: '8px',
   padding: '12px 16px',
   borderRadius: '8px',
-  background: colors.gray000_06,
+  background: colors.gray000_08,
   ...typographyVars.body_r_14,
   color: colors.gray300,
 });
@@ -345,7 +362,7 @@ export const searchInput = style({
   padding: '12px 16px 12px 44px',
   borderRadius: '8px',
   border: 'none',
-  background: colors.gray000_06,
+  background: colors.gray000_08,
   color: colors.gray000,
   ...typographyVars.body_r_14,
   outline: 'none',
