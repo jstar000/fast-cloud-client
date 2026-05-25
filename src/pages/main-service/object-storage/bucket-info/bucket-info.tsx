@@ -301,8 +301,14 @@ const BucketMain = ({ bucketName }: BucketMainProps) => {
 
   const objects = data.objects;
 
-  // 폴더 목록 추출 (첫 번째 경로 세그먼트 기준)
-  const folders = [...new Set(objects.map((obj) => obj.name.split('/')[0]))];
+  // 폴더 목록 추출 (이름에 '/'가 포함된 파일만, 첫 번째 경로 세그먼트 기준)
+  const folders = [
+    ...new Set(
+      objects
+        .filter((obj) => obj.name.includes('/'))
+        .map((obj) => obj.name.split('/')[0])
+    ),
+  ];
 
   // 선택된 폴더 또는 검색어로 필터링된 파일 목록
   const filteredObjects = objects.filter((obj) => {
