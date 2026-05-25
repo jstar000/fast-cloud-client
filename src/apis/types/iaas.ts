@@ -64,3 +64,18 @@ export interface BucketFileListResponse {
   bucket: string;
   objects: BucketObject[];
 }
+
+// 버킷 파일 업로드 POST /bucket/upload
+export interface UploadedFile {
+  name: string;
+  bytes: number;
+  content_type: string;
+  etag: string;
+  last_modified: string;
+}
+
+export interface UploadBucketFileResponse {
+  bucket: string;
+  uploadCount: number;
+  files: UploadedFile[];
+}

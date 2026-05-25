@@ -1,9 +1,10 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useRef, useState } from 'react';
 import * as styles from './bucket-info.css';
 import { Folder_Default, Chevron_Down_Default } from '@/assets/svg';
 import { useBucketList } from '@/apis/queries/use-get-bucket-list';
 import { useBucketFileList } from '@/apis/queries/use-get-bucket-file-list';
 import { useCreateBucketMutation } from '@/apis/mutations/use-create-bucket';
+import { useUploadBucketFileMutation } from '@/apis/mutations/use-upload-bucket-file';
 import { Loading } from '@/shared/components/loading/Loading';
 import { Button } from '@/shared/components/button/Button';
 import { BUTTON_VARIANTS } from '@/shared/constants/button';
@@ -166,6 +167,129 @@ const BucketSidebar = ({
   );
 };
 
+interface FileUploaderProps {
+  bucketName: string;
+}
+
+const FileUploader = ({ bucketName }: FileUploaderProps) => {
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [isDragOver, setIsDragOver] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { mutate: uploadFiles, isPending } = useUploadBucketFileMutation();
+
+  const addFiles = (incoming: FileList | File[]) => {
+    const list = Array.from(incoming);
+    if (list.length === 0) return;
+    setSelectedFiles((prev) => [...prev, ...list]);
+  };
+
+  const handleDropzoneClick = () => {
+    inputRef.current?.click();
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) addFiles(e.target.files);
+    e.target.value = '';
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragOver(false);
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    if (e.dataTransfer.files) addFiles(e.dataTransfer.files);
+  };
+
+  const handleRemove = (index: number) => {
+    setSelectedFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleUpload = () => {
+    if (selectedFiles.length === 0 || isPending) return;
+    uploadFiles(
+      { bucket: bucketName, files: selectedFiles },
+      {
+        onSuccess: () => setSelectedFiles([]),
+      }
+    );
+  };
+
+  return (
+    <div className={styles.uploaderSection}>
+      <input
+        ref={inputRef}
+        type="file"
+        multiple
+        hidden
+        onChange={handleInputChange}
+      />
+      <div
+        className={
+          isDragOver ? styles.uploaderDropzoneActive : styles.uploaderDropzone
+        }
+        onClick={handleDropzoneClick}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        <Folder_Default />
+        <span>파일을 끌어다 놓거나 클릭해 선택하세요</span>
+        <span className={styles.uploaderHint}>
+          여러 파일을 한 번에 올릴 수 있어요
+        </span>
+      </div>
+
+      {selectedFiles.length > 0 && (
+        <>
+          <div className={styles.uploaderFileList}>
+            {selectedFiles.map((file, index) => (
+              <div
+                key={`${file.name}-${index}`}
+                className={styles.uploaderFileRow}
+              >
+                <div className={styles.uploaderFileMeta}>
+                  <span className={styles.uploaderFileName}>{file.name}</span>
+                  <span className={styles.uploaderFileSize}>
+                    {formatFileSize(file.size)}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  className={styles.uploaderRemoveButton}
+                  onClick={() => handleRemove(index)}
+                  disabled={isPending}
+                >
+                  ✕
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className={styles.uploaderActions}>
+            <button
+              type="button"
+              className={styles.uploaderUploadButton}
+              onClick={handleUpload}
+              disabled={isPending}
+            >
+              {isPending
+                ? '업로드 중...'
+                : `파일 업로드하기 (${selectedFiles.length}개)`}
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 interface BucketMainProps {
   bucketName: string;
 }
@@ -240,6 +364,8 @@ const BucketMain = ({ bucketName }: BucketMainProps) => {
             ({filteredObjects.length})
           </span>
         </div>
+
+        <FileUploader bucketName={bucketName} />
 
         <div className={styles.searchContainer}>
           <span className={styles.searchIcon}>Q</span>

@@ -1,3 +1,4 @@
+import { colors } from '@/shared/styles/tokens/colors.css';
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
@@ -10,7 +11,7 @@ export const container = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   zIndex: 1000,
-  backgroundColor: 'transparent',
+  backgroundColor: colors.gray999,
 });
 
 export const buttonContainer = style({
