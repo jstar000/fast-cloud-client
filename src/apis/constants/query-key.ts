@@ -1,6 +1,11 @@
 export const iaasQueryKeys = {
   all: () => ['iaas'],
   bucket: () => [...iaasQueryKeys.all(), 'bucket'],
+  bucketFiles: (bucketName: string) => [
+    ...iaasQueryKeys.bucket(),
+    'files',
+    bucketName,
+  ],
   instance: () => [...iaasQueryKeys.all(), 'instance'],
   instanceDetail: (instanceId: string) => [
     ...iaasQueryKeys.instance(),

@@ -43,15 +43,24 @@ export interface CreateBucketResponse {
   created_at: string;
 }
 
-// 버킷 조회 GET
+// 버킷 목록 조회 GET /bucket
+export interface Bucket {
+  bucket_id: string;
+  name: string;
+  status: string;
+  created_at: string;
+}
 
+export type BucketListResponse = Bucket[];
+
+// 버킷 내 파일 목록 조회 GET /bucket?bucket={name}
 export interface BucketObject {
   name: string;
   size: number;
   last_modified: string;
 }
 
-export interface BucketListResponse {
+export interface BucketFileListResponse {
   bucket: string;
   objects: BucketObject[];
 }

@@ -20,6 +20,7 @@ export const colors = {
 
   // Grayscale Opacity
   gray000_10: 'rgba(255, 255, 255, 0.10)',
+  gray000_08: 'rgba(255, 255, 255, 0.08)',
   gray000_06: 'rgba(255, 255, 255, 0.06)',
   gray000_04: 'rgba(255, 255, 255, 0.04)',
   gray000_02: 'rgba(255, 255, 255, 0.02)',
